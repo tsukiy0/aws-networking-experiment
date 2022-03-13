@@ -1,0 +1,27 @@
+{
+  "name": "deploy",
+  "private": true,
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "lint": "eslint \"./src/**/*.ts\"",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --rootDir src --outDir dist",
+    "prebuild": "rm -rf dist",
+    "deploy": "cdk deploy --require-approval never --all"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.4.0",
+    "constructs": "10.0.27"
+  },
+  "devDependencies": {
+    "@types/node": "16.9.4",
+    "aws-cdk": "2.4.0",
+    "config": "*",
+    "eslint": "7.32.0",
+    "tsconfig": "*",
+    "typescript": "^4.5.3"
+  }
+}
